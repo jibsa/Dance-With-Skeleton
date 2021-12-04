@@ -219,7 +219,7 @@ public class NoteRecord : MonoBehaviour
         stageMusic.Play();
         skeleton.Play("Skeleton");
         skeleton.speed = 1;
-        //StartCoroutine(CheckMusicEnd());
+        StartCoroutine(CheckMusicEnd());
     }
 
     private IEnumerator CheckMusicEnd()

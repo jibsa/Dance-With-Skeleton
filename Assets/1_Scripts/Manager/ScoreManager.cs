@@ -50,7 +50,7 @@ public class ScoreManager : MonoBehaviour
         miss++;
         if(miss >= 10)
         {
-            //GameOver();
+            GameOver();
         }
     }
 
