@@ -96,15 +96,15 @@ public class GameManager : MonoBehaviour
         DateTime lastDateTime = DateTime.Parse(lastTime);
         TimeSpan conpareTime = DateTime.Now - lastDateTime;
         CurrentUser.time += conpareTime.TotalSeconds;
-        CurrentUser.heart += (int)CurrentUser.time / 10;
-        CurrentUser.time %= 10;
+        CurrentUser.heart += (int)CurrentUser.time / 60;
+        CurrentUser.time %= 60;
     }
     private void HeartSystem()
     {
         if (CurrentUser.heart > 15)
         {
             CurrentUser.heart = 15;
-            CurrentUser.time = 10;
+            CurrentUser.time = 60;
         }
         else if (CurrentUser.heart < 15)
         {
@@ -118,9 +118,9 @@ public class GameManager : MonoBehaviour
     private void Time()
     {
         CurrentUser.time++;
-        if (CurrentUser.time >= 10)
+        if (CurrentUser.time >= 60)
         {
-            CurrentUser.heart += (int)CurrentUser.time / 10;
+            CurrentUser.heart += (int)CurrentUser.time / 60;
             CurrentUser.time = 0;
         }
     }

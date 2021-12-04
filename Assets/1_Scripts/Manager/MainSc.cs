@@ -22,4 +22,10 @@ public class MainSc : MonoBehaviour
         });
 
     }
+    private void Start()
+    {
+        GameManager.Instance.uiManager.Heart();
+
+        GameManager.Instance.uiManager.TimeText();
+    }
 }

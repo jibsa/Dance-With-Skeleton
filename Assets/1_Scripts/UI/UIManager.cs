@@ -4,8 +4,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIManager : MonoSingleton<UIManager>
+public class UIManager : MonoBehaviour
 {
+    private static UIManager instance = null;
+    public static UIManager Instance
+    {
+        get
+        {
+            if (instance == null)
+            {
+                instance = FindObjectOfType<UIManager>();
+                if (instance == null)
+                {
+                    instance = new GameObject("UIManager").AddComponent<UIManager>();
+                }
+            }
+            return instance;
+        }
+    }
 
     [SerializeField]
     Text score;
@@ -49,19 +65,21 @@ public class UIManager : MonoSingleton<UIManager>
     //도전 티켓 텍스트 업데이트
     public void Heart()
     {
+        Debug.Log(GameManager.Instance.CurrentUser.heart);
         heartText.text = string.Format("♪ {0}", GameManager.Instance.CurrentUser.heart);
     }
 
     //도전 티켓 시간 텍스트
     public void TimeText()
     {
+        Debug.Log(GameManager.Instance.CurrentUser.time);
         if (GameManager.Instance.CurrentUser.heart == 15)
         {
             timeText.text = string.Format("남은 시간(초) : 0");
         }
         else
         {
-            timeText.text = string.Format("남은 시간(초) : {0}", 10 - (int)GameManager.Instance.CurrentUser.time);
+            timeText.text = string.Format("남은 시간(초) : {0}", 60 - (int)GameManager.Instance.CurrentUser.time);
         }
     }
 
