@@ -755,11 +755,11 @@ PlayerSettings:
     m_VersionName: 
   apiCompatibilityLevel: 6
   activeInputHandler: 0
-  cloudProjectId: 0ac04a36-8af1-43a1-bb0a-81aaba210e6c
+  cloudProjectId: 787bf65e-899e-4992-bd4e-006de8abff11
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: DanceWithSkeleton (2)
-  organizationId: jibsa
+  projectName: DanceWithSkeleton
+  organizationId: namsusu
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   virtualTexturingSupportEnabled: 0
