@@ -24,8 +24,6 @@ public class UIManager : MonoBehaviour
     }
 
     [SerializeField]
-    Text wowText;
-    [SerializeField]
     Text score;
     [SerializeField]
     Text songName;

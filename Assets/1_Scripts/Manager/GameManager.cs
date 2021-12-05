@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     public string stageName = null;
 
+    
     private void Awake()
     {
         uiManager = FindObjectOfType<UIManager>();

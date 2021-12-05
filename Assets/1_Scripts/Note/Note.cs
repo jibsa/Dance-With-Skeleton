@@ -35,6 +35,7 @@ public class Note : MonoBehaviour
         {
             //빨리 누를시 점수 깎이는거
             Debug.Log("Bad!");
+        NoteRecord.Instance.Click("Bad!");
             //NoteRecord.Instance.PlayHeartAnim();
             MissNote();
             ResetNote();
@@ -45,6 +46,7 @@ public class Note : MonoBehaviour
         {
             //히트 타임과 액티브타임의 시간 비교로 점수 들어오는 코드
             Debug.Log("Correct!");
+        NoteRecord.Instance.Click("Correct!");
             if (isPink)
             {
                 PoolManager.Instance.MakeObject("ring", transform.position);
@@ -83,6 +85,7 @@ public class Note : MonoBehaviour
     private void MissNote() //노트를 놓쳤을 때 실행되는 함수
     {
         Debug.Log("Miss!");
+        NoteRecord.Instance.Click("Miss!");
         ResetNote();
         ScoreManager.Instance.MissNote();
         gameObject.SetActive(false);

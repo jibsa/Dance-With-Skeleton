@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.IO;
+using DG.Tweening;
 
 public class NoteRecord : MonoBehaviour
 {
@@ -52,7 +54,8 @@ public class NoteRecord : MonoBehaviour
     //심장
     public GameObject heart = null;
 
-
+    [SerializeField]
+    Text wowText;
 
     string SAVE_PATH = "";
     readonly string SAVE_NAME = " Stage.txt";
@@ -135,6 +138,16 @@ public class NoteRecord : MonoBehaviour
     private void MakeNote(Vector2 pos, string type) //pos 위치에 노트 생성
     {
         PoolManager.Instance.MakeObject(type, pos);
+    }
+
+    
+
+    //클릭 텍스트 효과
+    public void Click(string str)
+    {
+        wowText.DOFade(1f, 0f);
+        wowText.text = string.Format(str);
+        wowText.DOFade(0f, 0.7f);
     }
 
     private void RecordNoteInfo(string type) //노트 정보 기록
