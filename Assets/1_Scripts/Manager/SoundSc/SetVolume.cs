@@ -6,14 +6,14 @@ using UnityEngine.UI;
 public class SetVolume : MonoBehaviour
 {
     public Slider backVolume;
-    public AudioSource audio;
+    public AudioSource bgm;
 
     float backVol = 1;
     private void Start()
     {
         backVol = PlayerPrefs.GetFloat("backvol", 1f);
         backVolume.value = backVol;
-        audio.volume = backVolume.value;
+        bgm.volume = backVolume.value;
     }
     private void Update()
     {
@@ -22,7 +22,7 @@ public class SetVolume : MonoBehaviour
 
     private void SoundSlider()
     {
-        audio.volume = backVolume.value;
+        bgm.volume = backVolume.value;
 
         backVol = backVolume.value;
         PlayerPrefs.SetFloat("backvol", backVol);

@@ -81,6 +81,7 @@ public class NoteRecord : MonoBehaviour
         Debug.Log(stageName);
         if (isPlaying)
         {
+            ScoreManager.Instance.StageStart();
             LoadStageFromJson();
             StartCoroutine(StartMusic(1f));
         }

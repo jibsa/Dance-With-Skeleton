@@ -32,10 +32,11 @@ public class ScoreManager : MonoBehaviour
     private int highScore = 0;
     private int miss = 0;
 
-    private void OnEnable()
+    public void StageStart()
     {
         miss = 0;
         highScore = PlayerPrefs.GetInt(NoteRecord.Instance.stageName + " High Score", 0);
+        Debug.Log("high Score " + highScore);
         UpdateUI();
     }
 
