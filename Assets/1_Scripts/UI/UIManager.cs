@@ -24,6 +24,8 @@ public class UIManager : MonoBehaviour
     }
 
     [SerializeField]
+    Text wowText;
+    [SerializeField]
     Text score;
     [SerializeField]
     Text songName;
@@ -35,6 +37,7 @@ public class UIManager : MonoBehaviour
     GameObject musicPanel;
     [SerializeField]
     private GameObject gameOverPanel = null;
+
 
     bool isSetting = false;
 
@@ -51,15 +54,19 @@ public class UIManager : MonoBehaviour
 
     private void Start()
     {
-        InvokeRepeating("TimeText", 0f, 0.5f);
-        InvokeRepeating("Heart", 0f, 1f);
+        
         CreatePanels();
     }
 
-    public void UpdateScore()
+    public void GameOverScore()
     {
         songName.text = GameManager.Instance.stageName;
-        score.text = string.Format("{0}", score);
+        UpdateScoreText();
+    }
+
+    void UpdateScoreText()
+    {
+        score.text = string.Format("Score : {0}", score);
     }
 
     //도전 티켓 텍스트 업데이트
