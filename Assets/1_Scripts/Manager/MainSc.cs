@@ -22,9 +22,4 @@ public class MainSc : MonoBehaviour
         });
 
     }
-    private void Update()
-    {
-        GameManager.Instance.uiManager.Heart();
-        GameManager.Instance.uiManager.TimeText();
-    }
 }

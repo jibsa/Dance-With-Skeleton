@@ -679,7 +679,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   backVolume: {fileID: 283552801}
-  audio: {fileID: 870435713}
+  bgm: {fileID: 0}
 --- !u!1 &311056945
 GameObject:
   m_ObjectHideFlags: 0
@@ -758,7 +758,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "\u266A 15"
+  m_Text: "\u266A 0"
 --- !u!1 &321460594
 GameObject:
   m_ObjectHideFlags: 0
@@ -3338,6 +3338,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2092365620}
   - component: {fileID: 2092365619}
+  - component: {fileID: 2092365621}
   m_Layer: 0
   m_Name: UIManager
   m_TagString: Untagged
@@ -3357,10 +3358,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6062145b30698464195af1d0735179be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  wowText: {fileID: 0}
   score: {fileID: 0}
   songName: {fileID: 0}
-  heartText: {fileID: 311056948}
-  timeText: {fileID: 1011876407}
   musicPanel: {fileID: 870732789}
   gameOverPanel: {fileID: 1605397821}
 --- !u!4 &2092365620
@@ -3377,6 +3377,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2092365621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2092365618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3852ae69beb03c4baab4e878adffef0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heartText: {fileID: 311056948}
+  timeText: {fileID: 1011876407}
 --- !u!1 &2115139135
 GameObject:
   m_ObjectHideFlags: 0

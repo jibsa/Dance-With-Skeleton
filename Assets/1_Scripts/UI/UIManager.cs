@@ -30,10 +30,6 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     Text songName;
     [SerializeField]
-    Text heartText;
-    [SerializeField]
-    Text timeText;
-    [SerializeField]
     GameObject musicPanel;
     [SerializeField]
     private GameObject gameOverPanel = null;
@@ -54,7 +50,7 @@ public class UIManager : MonoBehaviour
 
     private void Start()
     {
-        
+
         CreatePanels();
     }
 
@@ -69,26 +65,6 @@ public class UIManager : MonoBehaviour
         score.text = string.Format("Score : {0}", score);
     }
 
-    //도전 티켓 텍스트 업데이트
-    public void Heart()
-    {
-        Debug.Log(GameManager.Instance.CurrentUser.heart);
-        heartText.text = string.Format("♪ {0}", GameManager.Instance.CurrentUser.heart);
-    }
-
-    //도전 티켓 시간 텍스트
-    public void TimeText()
-    {
-        Debug.Log(GameManager.Instance.CurrentUser.time);
-        if (GameManager.Instance.CurrentUser.heart == 15)
-        {
-            timeText.text = string.Format("남은 시간(초) : 0");
-        }
-        else
-        {
-            timeText.text = string.Format("남은 시간(초) : {0}", 60 - (int)GameManager.Instance.CurrentUser.time);
-        }
-    }
 
     public void Setting(GameObject setting)
     {
